@@ -23,7 +23,7 @@ public class NaturalPerson implements Serializable {
     private int    reference;    
     @Column(name="Rfrnc_Ncnlty")
     private int    referenceNacionality;
-    @Column(name="Rfrnc_TypPrsn")
+    @Column(name="Rfrnc_Cntry")
     private int    referenceCountry;
     @Column(name="IdntfctnDcmnt")
     private String identificationDocument;
