@@ -2,7 +2,7 @@
 <persistence version="2.2" xmlns="https://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence 2 2.xsd">
     <persitence-unit name="HibernateTest" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.halconbit.structure.base.hibernate.maven.java.domain.Person</class>
+        <class>com.halconbit.structure.base.hibernate.maven.java.Domain.NaturalPerson</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/MIPSS_?useSSL=true" />
             <property name="javax.persistence.jdbc.user" value="root" />
