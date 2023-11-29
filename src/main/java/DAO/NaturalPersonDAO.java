@@ -64,4 +64,20 @@ public class NaturalPersonDAO {
         return this.entityManager.find(NaturalPerson.class, naturalPerson.getReference());
     }
     
+    public void delete(NaturalPerson naturalPerson) {
+        try {
+            this.entityManager.getTransaction().begin();
+            this.entityManager.remove(this.entityManager.merge(naturalPerson)); // Delete data.
+            this.entityManager.getTransaction().commit();
+        } catch(Exception exception) {
+            exception.printStackTrace(System.out);
+            this.entityManager.getTransaction().rollback();
+        } finally {
+            if(this.entityManager != null) {
+                this.entityManager.close();
+            }
+        }
+        
+    }
+    
 }
