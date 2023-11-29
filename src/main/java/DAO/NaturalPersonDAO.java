@@ -31,13 +31,37 @@ public class NaturalPersonDAO {
     public void create(NaturalPerson naturalPerson) {
         try {
             this.entityManager.getTransaction().begin();
-            this.entityManager.persist(naturalPerson);
+            this.entityManager.persist(naturalPerson); // Insert data.
             this.entityManager.getTransaction().commit();
         } catch(Exception exception) {
             exception.printStackTrace(System.out);
             this.entityManager.getTransaction().rollback();
+        } finally {
+            if(this.entityManager != null) {
+                this.entityManager.close();
+            }
         }
         
+    }
+    
+    public void update(NaturalPerson naturalPerson) {
+        try {
+            this.entityManager.getTransaction().begin();
+            this.entityManager.merge(naturalPerson); // Update data.
+            this.entityManager.getTransaction().commit();
+        } catch(Exception exception) {
+            exception.printStackTrace(System.out);
+            this.entityManager.getTransaction().rollback();
+        } finally {
+            if(this.entityManager != null) {
+                this.entityManager.close();
+            }
+        }
+        
+    }
+    
+    public NaturalPerson findByReference(NaturalPerson naturalPerson) {
+        return this.entityManager.find(NaturalPerson.class, naturalPerson.getReference());
     }
     
 }

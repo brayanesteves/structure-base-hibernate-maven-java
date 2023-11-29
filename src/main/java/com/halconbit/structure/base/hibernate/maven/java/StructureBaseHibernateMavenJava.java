@@ -33,9 +33,18 @@ public class StructureBaseHibernateMavenJava {
             Time checkTime = new Time(hour / 100, // Hours
                     hour % 100 / 60, // Minutes
                     hour % 100 % 60); // Seconds
-
-            NaturalPerson naturalPerson = new NaturalPerson(1, 1, "V-22749598", "Brayan", "Esteves", "+584149904852", "Other", 0, 0, 0, dateAdmission, checkTime);
-            naturalPersonDAO.create(naturalPerson);
+            
+            // Update.
+            NaturalPerson naturalPersonUpdate = new NaturalPerson(1, 1, 1, "V-000009", "Otniel", "Esteves", "+584149904852", "Other", 1, 0, 0, dateAdmission, checkTime);
+            naturalPersonUpdate = naturalPersonDAO.findByReference(naturalPersonUpdate);
+            System.out.println("Natural Person Fin: " + naturalPersonUpdate);
+            naturalPersonUpdate = new NaturalPerson(1, 1, 1, "V-000009", "Otniel", "Esteves", "+584149904852", "Other", 1, 0, 0, dateAdmission, checkTime);
+            naturalPersonDAO.update(naturalPersonUpdate);
+            
+            // Create.
+            NaturalPerson naturalPersonCreate = new NaturalPerson(1, 1, "V-00000", "Brayan", "Esteves", "+584149904852", "Other", 0, 0, 0, dateAdmission, checkTime);
+            naturalPersonDAO.create(naturalPersonCreate);
+            naturalPersonDAO.list();
         } catch (ParseException ex) {
             Logger.getLogger(StructureBaseHibernateMavenJava.class.getName()).log(Level.SEVERE, null, ex);
         }
