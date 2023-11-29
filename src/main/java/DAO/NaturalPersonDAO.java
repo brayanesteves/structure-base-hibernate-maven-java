@@ -28,4 +28,16 @@ public class NaturalPersonDAO {
         }
     }
     
+    public void create(NaturalPerson naturalPerson) {
+        try {
+            this.entityManager.getTransaction().begin();
+            this.entityManager.persist(naturalPerson);
+            this.entityManager.getTransaction().commit();
+        } catch(Exception exception) {
+            exception.printStackTrace(System.out);
+            this.entityManager.getTransaction().rollback();
+        }
+        
+    }
+    
 }
