@@ -20,7 +20,7 @@ public class NaturalPerson implements Serializable {
     
     @Column(name="Rfrnc")
     @Id
-    private int    reference;    
+    private int    reference;
     @Column(name="Rfrnc_Ncnlty")
     private int    referenceNacionality;
     @Column(name="Rfrnc_Cntry")

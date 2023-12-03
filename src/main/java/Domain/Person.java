@@ -1,17 +1,35 @@
 package Domain;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Person {
+@Entity
+@Table(name="0_Prsn")
+public class Person implements Serializable {
     
+    private static final long serialVersionUID = 1L;
+    
+    @Column(name="Rfrnc")
+    @Id
     private Long reference;
+    @Column(name="Rfrnc_Prsn")
     private Long referencePerson;
+    @Column(name="Rfrnc_TypPrsn")
     private Long referenceTypePerson;
+    @Column(name="Cndtn")
     private int  condition;
+    @Column(name="Rmvd")
     private int  removed;
+    @Column(name="Lckd")
     private int  locked;
+    @Column(name="DtAdmssn")
     private Date dateAdmission;
+    @Column(name="ChckTm")
     private Time checkTime;
 
     public Person() {
