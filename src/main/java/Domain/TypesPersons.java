@@ -123,5 +123,10 @@ public class TypesPersons implements Serializable {
     public void setCheckTime(Time checkTime) {
         this.checkTime = checkTime;
     }
+
+    @Override
+    public String toString() {
+        return "TypesPersons{" + "reference=" + reference + ", name=" + name + ", description=" + description + ", referenceTypesPersons=" + referenceTypesPersons + ", condition=" + condition + ", removed=" + removed + ", locked=" + locked + ", dateAdmission=" + dateAdmission + ", checkTime=" + checkTime + '}';
+    }
     
 }

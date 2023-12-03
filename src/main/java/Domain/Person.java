@@ -112,5 +112,10 @@ public class Person implements Serializable {
     public void setCheckTime(Time checkTime) {
         this.checkTime = checkTime;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" + "reference=" + reference + ", referencePerson=" + referencePerson + ", referenceTypePerson=" + referenceTypePerson + ", condition=" + condition + ", removed=" + removed + ", locked=" + locked + ", dateAdmission=" + dateAdmission + ", checkTime=" + checkTime + '}';
+    }
     
 }
