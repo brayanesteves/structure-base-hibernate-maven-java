@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +36,14 @@ public class Person implements Serializable {
     private Date dateAdmission;
     @Column(name="ChckTm")
     private Time checkTime;
+    
+    @JoinColumn(name="Rfrnc", referencedColumnName = "Rfrnc_Prsn")
+    @ManyToMany
+    private NaturalPerson naturalPerson;
+    
+    @JoinColumn(name="Rfrnc", referencedColumnName = "Rfrnc_TypPrsn")
+    @ManyToMany
+    private TypesPersons typesPersons;
 
     public Person() {
     }
