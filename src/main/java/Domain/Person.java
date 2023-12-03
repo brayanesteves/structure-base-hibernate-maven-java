@@ -123,6 +123,22 @@ public class Person implements Serializable {
         this.checkTime = checkTime;
     }
 
+    public NaturalPerson getNaturalPerson() {
+        return naturalPerson;
+    }
+
+    public void setNaturalPerson(NaturalPerson naturalPerson) {
+        this.naturalPerson = naturalPerson;
+    }
+
+    public TypesPersons getTypesPersons() {
+        return typesPersons;
+    }
+
+    public void setTypesPersons(TypesPersons typesPersons) {
+        this.typesPersons = typesPersons;
+    }
+
     @Override
     public String toString() {
         return "Person{" + "reference=" + reference + ", referencePerson=" + referencePerson + ", referenceTypePerson=" + referenceTypePerson + ", condition=" + condition + ", removed=" + removed + ", locked=" + locked + ", dateAdmission=" + dateAdmission + ", checkTime=" + checkTime + '}';

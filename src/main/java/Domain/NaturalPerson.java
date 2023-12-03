@@ -3,11 +3,13 @@ package Domain;
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -49,6 +51,9 @@ public class NaturalPerson implements Serializable {
     @Column(name="ChckTm")
     private Time   checkTime;
 
+    @ManyToMany(mappedBy="0_Prsn")
+    private List<Person> listPerson;
+    
     public NaturalPerson() {
     }
 
@@ -203,6 +208,14 @@ public class NaturalPerson implements Serializable {
 
     public void setCheckTime(Time checkTime) {
         this.checkTime = checkTime;
+    }
+
+    public List<Person> getListPerson() {
+        return listPerson;
+    }
+
+    public void setListPerson(List<Person> listPerson) {
+        this.listPerson = listPerson;
     }
 
     @Override
