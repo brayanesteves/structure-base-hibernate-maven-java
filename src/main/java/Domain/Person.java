@@ -18,7 +18,7 @@ public class Person implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Rfrnc")    
+    @Column(name="Rfrnc")
     private Long reference;
     @Column(name="Rfrnc_Prsn")
     private Long referencePerson;
@@ -39,18 +39,18 @@ public class Person implements Serializable {
     }
 
     public Person(Long reference, Long referencePerson, Long referenceTypePerson, int condition, int removed, int locked, Date dateAdmission, Time checkTime) {
-        this.reference = reference;
-        this.referencePerson = referencePerson;
+        this.reference           = reference;
+        this.referencePerson     = referencePerson;
         this.referenceTypePerson = referenceTypePerson;
-        this.condition = condition;
-        this.removed = removed;
-        this.locked = locked;
-        this.dateAdmission = dateAdmission;
-        this.checkTime = checkTime;
+        this.condition           = condition;
+        this.removed             = removed;
+        this.locked              = locked;
+        this.dateAdmission       = dateAdmission;
+        this.checkTime           = checkTime;
     }
 
     public Long getReference() {
-        return reference;
+        return this.reference;
     }
 
     public void setReference(Long reference) {
@@ -58,7 +58,7 @@ public class Person implements Serializable {
     }
 
     public Long getReferencePerson() {
-        return referencePerson;
+        return this.referencePerson;
     }
 
     public void setReferencePerson(Long referencePerson) {
@@ -66,7 +66,7 @@ public class Person implements Serializable {
     }
 
     public Long getReferenceTypePerson() {
-        return referenceTypePerson;
+        return this.referenceTypePerson;
     }
 
     public void setReferenceTypePerson(Long referenceTypePerson) {
@@ -74,7 +74,7 @@ public class Person implements Serializable {
     }
 
     public int getCondition() {
-        return condition;
+        return this.condition;
     }
 
     public void setCondition(int condition) {
@@ -82,7 +82,7 @@ public class Person implements Serializable {
     }
 
     public int getRemoved() {
-        return removed;
+        return this.removed;
     }
 
     public void setRemoved(int removed) {
@@ -90,7 +90,7 @@ public class Person implements Serializable {
     }
 
     public int getLocked() {
-        return locked;
+        return this.locked;
     }
 
     public void setLocked(int locked) {
@@ -98,7 +98,7 @@ public class Person implements Serializable {
     }
 
     public Date getDateAdmission() {
-        return dateAdmission;
+        return this.dateAdmission;
     }
 
     public void setDateAdmission(Date dateAdmission) {
@@ -106,7 +106,7 @@ public class Person implements Serializable {
     }
 
     public Time getCheckTime() {
-        return checkTime;
+        return this.checkTime;
     }
 
     public void setCheckTime(Time checkTime) {

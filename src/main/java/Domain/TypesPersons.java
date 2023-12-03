@@ -1,35 +1,59 @@
 package Domain;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class TypesPersons {
-   
+@Entity
+@Table(name="0_TypesPrsns")
+public class TypesPersons implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Rfrnc")
     private Long   reference;
+    @Column(name="Nm")
     private String name;
+    @Column(name="Dscrptn")
     private String description;
+    @Column(name="Rfrnc_TypsPrsns")
     private Long   referenceTypesPersons;
-    private int    removed;
-    private int    locked;
-    private Date   dateAdmission;
-    private Time   checkTime;
+    @Column(name="Cndtn")
+    private int  condition;
+    @Column(name="Rmvd")
+    private int  removed;
+    @Column(name="Lckd")
+    private int  locked;
+    @Column(name="DtAdmssn")
+    private Date dateAdmission;
+    @Column(name="ChckTm")
+    private Time checkTime;
 
     public TypesPersons() {
     }
 
-    public TypesPersons(Long reference, String name, String description, Long referenceTypesPersons, int removed, int locked, Date dateAdmission, Time checkTime) {
-        this.reference = reference;
-        this.name = name;
-        this.description = description;
+    public TypesPersons(Long reference, String name, String description, Long referenceTypesPersons, int condition, int removed, int locked, Date dateAdmission, Time checkTime) {
+        this.reference             = reference;
+        this.name                  = name;
+        this.description           = description;
         this.referenceTypesPersons = referenceTypesPersons;
-        this.removed = removed;
-        this.locked = locked;
-        this.dateAdmission = dateAdmission;
-        this.checkTime = checkTime;
+        this.condition             = condition;
+        this.removed               = removed;
+        this.locked                = locked;
+        this.dateAdmission         = dateAdmission;
+        this.checkTime             = checkTime;
     }
 
     public Long getReference() {
-        return reference;
+        return this.reference;
     }
 
     public void setReference(Long reference) {
@@ -37,7 +61,7 @@ public class TypesPersons {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -45,7 +69,7 @@ public class TypesPersons {
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public void setDescription(String description) {
@@ -53,15 +77,23 @@ public class TypesPersons {
     }
 
     public Long getReferenceTypesPersons() {
-        return referenceTypesPersons;
+        return this.referenceTypesPersons;
     }
 
     public void setReferenceTypesPersons(Long referenceTypesPersons) {
         this.referenceTypesPersons = referenceTypesPersons;
     }
 
+    public int getCondition() {
+        return this.condition;
+    }
+
+    public void setCondition(int condition) {
+        this.condition = condition;
+    }
+
     public int getRemoved() {
-        return removed;
+        return this.removed;
     }
 
     public void setRemoved(int removed) {
@@ -69,7 +101,7 @@ public class TypesPersons {
     }
 
     public int getLocked() {
-        return locked;
+        return this.locked;
     }
 
     public void setLocked(int locked) {
@@ -77,7 +109,7 @@ public class TypesPersons {
     }
 
     public Date getDateAdmission() {
-        return dateAdmission;
+        return this.dateAdmission;
     }
 
     public void setDateAdmission(Date dateAdmission) {
